@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "start:dev": "nodemon index.js"
+  }
+}
