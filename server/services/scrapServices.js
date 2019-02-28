@@ -9,7 +9,6 @@ const importAdToBd = async dataAds => {
     },
   });
 };
-
 const getDatas = async () => {
   return await axios.get(BASE_URL);
 };

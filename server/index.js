@@ -6,13 +6,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const { importAdToBd, getDatas } = require('./services/scrapServices');
 const { collectedDataAds } = require('./scrap');
 
+app.use('/', express.static('../client/build/'));
+
 app.post('/', async (req, res) => {
   const datas = await collectedDataAds();
   await importAdToBd(datas);
   res.sendStatus(201);
 });
 
-app.get('/', async (req, res) => {
+app.get('/getDatas', async (req, res) => {
   const {
     data: { result },
   } = await getDatas();
